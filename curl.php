@@ -13,7 +13,7 @@ $fichero_prueba_1 = 'init.test';
 $ip_origen = '127.0.0.1';
 $url = "http://127.0.0.1/tests/test.php";
 $arr_header = Array ( "mod-qos-vip: TEST1TEST2TEST3TEST4" );
-
+$no_proxy = true;
 
 if ( is_readable ( 'config.php' ) ) {
 	include 'config.php';
@@ -42,7 +42,10 @@ while ( true ){
 	for ( $i = 1; $i <= 1000 ; $i++ ){
 		$ch = curl_init();
 
-		curl_setopt($ch, CURLOPT_PROXY, '');
+		if ( $no_proxy ) {
+			curl_setopt($ch, CURLOPT_PROXY, '');
+			curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, false);
+		}
 		curl_setopt($ch, CURLOPT_URL, "http://10.66.128.119/tests/test.php");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_INTERFACE, $ip_origen);
