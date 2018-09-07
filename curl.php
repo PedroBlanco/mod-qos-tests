@@ -32,9 +32,9 @@ foreach ( $arr_header as $cabecera ) {
 
 while ( true ){
 	if ( ! file_exists ( $fichero_prueba_1 ) ) {
-		printf ( PHP_EOL.PHP_EOL.'--- Esperando a que exista %s'.PHP_EOL, $fichero_prueba_1 );
+		printf ( PHP_EOL.'--- Esperando a que exista %s'.PHP_EOL, $fichero_prueba_1 );
 	} else {
-		printf ( PHP_EOL.PHP_EOL.'+++ Continuamos tests; existe %s'.PHP_EOL, $fichero_prueba_1 );
+		printf ( PHP_EOL.'+++ Continuamos tests; existe %s'.PHP_EOL, $fichero_prueba_1 );
 	}
 	while ( ! file_exists ( $fichero_prueba_1 ) ) {
 		//$init_test = false;
