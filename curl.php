@@ -48,7 +48,7 @@ while ( true ){
 			curl_setopt($ch, CURLOPT_PROXY, '');
 			curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, false);
 		}
-		curl_setopt($ch, CURLOPT_URL, "http://10.66.128.119/tests/test.php");
+		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_INTERFACE, $ip_origen);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $arr_header);
